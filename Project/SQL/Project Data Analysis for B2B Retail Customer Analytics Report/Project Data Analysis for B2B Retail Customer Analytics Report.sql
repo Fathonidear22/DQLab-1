@@ -1,6 +1,7 @@
 USE dqlab;
 
 -- Memahami table
+
 SELECT
     *
 FROM
@@ -42,6 +43,7 @@ WHERE
     status = "Shipped";
 
 -- Menghitung persentasi keseluruhan penjualan
+
 SELECT
     quarter,
     SUM(quantity) AS total_penjualan,
@@ -72,6 +74,7 @@ GROUP BY
     quarter;
 
 -- Apakah jumlah customers xyz.com semakin bertambah?
+
 SELECT
     quarter,
     COUNT(DISTINCT customerID) AS total_customers
@@ -91,6 +94,7 @@ GROUP BY
     quarter;
 
 -- Seberapa banyak customers tersebut yang sudah melakukan transaksi?
+
 SELECT
     quarter,
     COUNT(DISTINCT customerID) AS total_customers
@@ -122,6 +126,7 @@ GROUP BY
     quarter;
 
 -- Category produk apa saja yang paling banyak di-order oleh customers di Quarter-2?
+
 SELECT
     *
 FROM
@@ -151,6 +156,7 @@ ORDER BY
 
 -- Seberapa banyak customers yang tetap aktif bertransaksi setelah transaksi pertamanya?
 -- Menghitung total unik customers yang transaksi di quarter_1
+
 SELECT
     COUNT(DISTINCT customerID) as total_customers
 FROM
