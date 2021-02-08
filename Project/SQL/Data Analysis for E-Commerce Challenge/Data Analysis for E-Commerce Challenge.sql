@@ -1,6 +1,7 @@
 USE dqlab;
 
 -- 10 Transaksi terbesar user 12476
+
 SELECT
     seller_id,
     buyer_id,
@@ -16,6 +17,7 @@ LIMIT
     10;
 
 -- Transaksi per bulan
+
 SELECT
     EXTRACT(
         YEAR_MONTH
@@ -34,6 +36,7 @@ ORDER BY
     1;
 
 -- Pengguna dengan rata-rata transaksi terbesar di Januari 2020
+
 SELECT
     buyer_id,
     COUNT(1) AS jumlah_transaksi,
@@ -68,6 +71,7 @@ ORDER BY
     1;
 
 -- Kategori Produk Terlaris di 2020
+
 SELECT
     category,
     SUM(quantity) AS total_quantity,
@@ -87,6 +91,7 @@ LIMIT
     5;
 
 -- Mencari pembeli high value
+
 SELECT
     nama_user AS nama_pembeli,
     COUNT(1) AS jumlah_transaksi,
@@ -105,6 +110,7 @@ ORDER BY
     3 DESC;
 
 -- Mencari Dropshipper
+
 SELECT
     nama_user AS nama_pembeli,
     COUNT(1) AS jumlah_transaksi,
@@ -124,6 +130,7 @@ ORDER BY
     2 DESC;
 
 -- Mencari Reseller Offline
+
 SELECT
     nama_user AS nama_pembeli,
     COUNT(1) AS jumlah_transaksi,
@@ -154,6 +161,7 @@ ORDER BY
     3 DESC;
 
 -- Pembeli sekaligus penjual
+
 SELECT
     nama_user AS nama_pengguna,
     jumlah_transaksi_beli,
@@ -184,6 +192,7 @@ ORDER BY
     1;
 
 -- Lama transaksi dibayar
+
 SELECT
     EXTRACT(
         YEAR_MONTH
