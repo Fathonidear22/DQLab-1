@@ -1,6 +1,7 @@
 USE dqlab;
 
 -- Produk DQLab Mart
+
 SELECT
     no_urut,
     kode_produk,
@@ -13,6 +14,7 @@ WHERE
     AND harga < 150000;
 
 -- Thumb drive di DQLab Mart
+
 SELECT
     no_urut,
     kode_produk,
@@ -24,6 +26,7 @@ WHERE
     nama_produk LIKE '%Flashdisk%';
 
 -- Pelanggan Bergelar
+
 SELECT
     no_urut,
     kode_pelanggan,
@@ -37,6 +40,7 @@ WHERE
     OR nama_pelanggan LIKE '%Drs.%';
 
 -- Mengurutkan Nama Pelanggan
+
 SELECT
     nama_pelanggan
 FROM
@@ -45,6 +49,7 @@ ORDER BY
     nama_pelanggan;
 
 -- Mengurutkan Nama Pelanggan Tanpa Gelar
+
 select
     nama_pelanggan
 FROM
@@ -53,6 +58,7 @@ ORDER BY
     SUBSTRING_INDEX(nama_pelanggan, ". ", -1);
 
 -- Nama Pelanggan yang Paling Panjang
+
 SELECT
     nama_pelanggan
 FROM
@@ -66,6 +72,7 @@ WHERE
     );
 
 -- Nama Pelanggan yang Paling Panjang dengan Gelar
+                
 SELECT
     nama_pelanggan
 FROM
@@ -89,6 +96,7 @@ ORDER BY
     LENGTH(nama_pelanggan) DESC;
 
 -- Kuantitas Produk yang Banyak Terjual
+            
 SELECT
     ms_produk.kode_produk,
     ms_produk.nama_produk,
@@ -103,6 +111,7 @@ HAVING
     SUM(tr_penjualan_detail.qty) > 2;
 
 -- Pelanggan Paling Tinggi Nilai Belanjanya
+            
 SELECT
     tr_penjualan.kode_pelanggan,
     ms_pelanggan.nama_pelanggan,
@@ -122,6 +131,7 @@ LIMIT
     1;
 
 -- Pelanggan yang Belum Pernah Berbelanja
+            
 SELECT
     kode_pelanggan,
     nama_pelanggan,
@@ -137,6 +147,7 @@ WHERE
     );
 
 -- Transaksi Belanja dengan Daftar Belanja lebih dari 1
+            
 SELECT
     tr.kode_transaksi,
     tr.kode_pelanggan,
