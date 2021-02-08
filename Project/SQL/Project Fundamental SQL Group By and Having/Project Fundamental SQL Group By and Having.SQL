@@ -1,6 +1,7 @@
 USE dqlab;
 
 -- Mendapatkan jumlah nilai pinalty
+
 SELECT
     customer_id,
     sum(pinalty)
