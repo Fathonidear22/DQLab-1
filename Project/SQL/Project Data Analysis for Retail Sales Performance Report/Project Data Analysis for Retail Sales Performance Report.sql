@@ -1,6 +1,7 @@
 USE dqlab;
 
 -- Overall Performance by Year
+
 SELECT
     YEAR(order_date) AS years,
     ROUND(SUM(sales), 2) AS sales,
@@ -17,6 +18,7 @@ ORDER BY
     years;
 
 -- Overall Performance by Product Sub Category
+
 SELECT
     YEAR(order_date) AS years,
     product_sub_category,
@@ -35,6 +37,7 @@ ORDER BY
     sales DESC;
 
 -- Promotion Effectiveness and Efficiency by Years
+
 SELECT
     YEAR(order_date) AS years,
     SUM(sales) AS sales,
@@ -52,6 +55,7 @@ ORDER BY
     years;
 
 -- Promotion Effectiveness and Efficiency by Product Sub Category
+
 SELECT
     YEAR(order_date) AS years,
     product_sub_category,
@@ -72,6 +76,7 @@ ORDER BY
     sales DESC;
 
 -- Customers Transactions per Year
+
 SELECT
     YEAR(order_date) AS years,
     COUNT(DISTINCT customer) AS number_of_customer
